@@ -20,3 +20,54 @@ spec:
   owner: "test"
   providesApis:
     - "test"
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: test-api
+  description: test api
+spec:
+  type: openapi
+  lifecycle: experimental
+definition: |
+  openapi: "3.0.1"
+  info:
+    version: 1.0.0
+    title: test - api
+  servers:
+    - url: https://api-test-backstagedemo.empcbr.thoughtworks-labs.net
+  paths:
+    /Math:
+      get:
+        summary: Sum given numbers
+        tags:
+          - Math
+        parameters:
+          - name: firstNumber
+            in: query
+            schema:
+              type: integer
+              format: int32
+          - name: secondNumber
+            in: query
+            schema:
+              type: integer
+              format: int32
+        responses:
+          '200':
+            description: Success
+            content:
+              text/plain:
+                schema:
+                  type: integer
+                  format: int32
+              application/json:
+                schema:
+                  type: integer
+                  format: int32
+              text/json:
+                schema:
+                  type: integer
+                  format: int32
+          
+  
