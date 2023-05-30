@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: "test"
-  description: "test"
+  name: demo
+  description: demo
   links:
     - url: https://api-test-backstagedemo.empcbr.thoughtworks-labs.net/swagger
       title: test
@@ -17,9 +17,9 @@ metadata:
 spec:
   type: service
   lifecycle: experimental
-  owner: "test"
+  owner: test
   providesApis:
-    - "test"
+    - test-api
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
